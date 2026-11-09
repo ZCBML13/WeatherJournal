@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Journal</title>
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header>
+    <h1>Weather Journal</h1>
+    <form id="add-city">
+        <input name="name" placeholder="Add a city, e.g. Montreal" required maxlength="100" autocomplete="off">
+        <button>Add</button>
+    </form>
+    <p id="message" role="status"></p>
+</header>
+
+<main>
+    <section>
+        <h2>Your cities</h2>
+        <ul id="cities" class="cards"></ul>
+        <p id="empty" class="muted" hidden>No cities yet. Add one above.</p>
+    </section>
+
+    <section id="detail" hidden>
+        <div class="detail-head">
+            <h2 id="detail-title"></h2>
+            <div>
+                <button id="refresh" class="secondary">Refresh</button>
+                <button id="delete-city" class="danger">Remove city</button>
+            </div>
+        </div>
+        <p id="detail-meta" class="muted"></p>
+
+        <h3>Next days</h3>
+        <ul id="forecast" class="days"></ul>
+
+        <h3>Journal</h3>
+        <table>
+            <thead><tr><th>Date</th><th>Weather</th><th>High / Low</th><th>Rain</th><th>Your note</th></tr></thead>
+            <tbody id="history"></tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Last 30 days</h2>
+        <div id="stats"></div>
+    </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
